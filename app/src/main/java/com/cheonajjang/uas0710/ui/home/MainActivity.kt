@@ -49,7 +49,6 @@ class MainActivity : AppCompatActivity() {
         viewModel = ViewModelProvider(this,ViewModelProvider.NewInstanceFactory()).get(UserViewModel::class.java)
 
         binding.apply {
-            val recyclerMain = findViewById<RecyclerView>(R.id.recyclerMain)
 
             recyclerMain.adapter = adapter
             recyclerMain.layoutManager = LinearLayoutManager(this@MainActivity)

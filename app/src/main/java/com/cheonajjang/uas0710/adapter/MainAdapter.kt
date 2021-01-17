@@ -42,7 +42,6 @@ class MainAdapter : RecyclerView.Adapter<MainAdapter.ViewHolder>() {
             binding.apply {
                 Glide.with(itemView)
                     .load(user.avatar_url)
-                    .transition(DrawableTransitionOptions.withCrossFade())
                     .centerCrop()
                     .into(itemAvatar)
 

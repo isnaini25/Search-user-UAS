@@ -1,17 +1,11 @@
 package com.cheonajjang.uas0710.ui.detail
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import androidx.fragment.app.Fragment
-import androidx.fragment.app.FragmentManager
-import androidx.fragment.app.FragmentPagerAdapter
+import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
-import androidx.viewpager.widget.ViewPager
 import com.bumptech.glide.Glide
-import com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions
 import com.cheonajjang.uas0710.R
 import com.cheonajjang.uas0710.databinding.ActivityDetailBinding
-import com.google.android.material.tabs.TabLayout
 
 
 class DetailActivity : AppCompatActivity() {
@@ -46,12 +40,11 @@ class DetailActivity : AppCompatActivity() {
                 binding.apply {
                     detailLogin.text = it.login
                     detailURL.text = it.html_url
-                    detailFollower.text = "${it.followers} ${getString(R.string.tab1)}"
-                    detailFollowing.text = "${it.following} ${getString(R.string.tab2)}"
+                    detailFollower.text = "${it.followers}" + getString(R.string.tab1)
+                    detailFollowing.text = "${it.following}" + getString(R.string.tab2)
                     detailRepos.text = "${it.public_repos} Repos"
                     Glide.with(this@DetailActivity)
                         .load(it.avatar_url)
-                        .transition(DrawableTransitionOptions.withCrossFade())
                         .centerCrop()
                         .into(detailAvatar)
                 }
