@@ -40,8 +40,8 @@ class DetailActivity : AppCompatActivity() {
                 binding.apply {
                     detailLogin.text = it.login
                     detailURL.text = it.html_url
-                    detailFollower.text = "${it.followers} " + getString(R.string.tab1)
-                    detailFollowing.text = "${it.following} " + getString(R.string.tab2)
+                    detailFollower.text = "${it.followers} ${getString(R.string.tab1)}"
+                    detailFollowing.text =  "${it.following} ${getString(R.string.tab2)}"
                     detailRepos.text = "${it.public_repos} Repos"
                     Glide.with(this@DetailActivity)
                         .load(it.avatar_url)
